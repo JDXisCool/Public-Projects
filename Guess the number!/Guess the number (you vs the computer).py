@@ -1,4 +1,5 @@
 import random
+print (" Welcome To Guess The Number!")
 print (" You have to guess from the number 1 to 10! Good Luck!")
 
 the_number = random.randint(1, 4)
