@@ -3,6 +3,7 @@ import random
 TITLE = "Zombies vs Tanks"
 WIDTH = 800
 HEIGHT = 640
+highscore1 = 1
 
 UP = 180
 DOWN = 0
@@ -26,29 +27,25 @@ ZOMBIE_SPEED = 1
 
 score = 0
 game_over = False
-
 def draw():
     if not game_over:
         screen.blit("tank.png", (0,0))
         blue_tank.draw()
         bullet.draw()
-        clock.\
-            schedule(shoot_bullet, 5)
+        clock.schedule(shoot_bullet, 5)
 
         clock.schedule(create_zombies, 5)
         move_zombie()
         screen.draw.text(f"score: {score} ",  (350, 150))
     else:
         screen.fill("black")
-        screen.draw.text(f"ⲯ﹍︿﹍︿﹍ 𝙶𝙰𝙼𝙴 𝙾𝚅𝙴𝚁 ﹍ⲯ﹍ⲯ﹍︿﹍☼, Your scoreis ..... : \
-                         {score} ! ",  (350, 150))
+        screen.draw.text(f"Game Over, Your score: {score}.",  (350, 150))
 
 def update():
     global bullet_fired
     if keyboard.left:
         blue_tank.x = blue_tank.x - 5
-        blue_tank.angle \
-              = LEFT
+        blue_tank.angle = LEFT
     if keyboard.right:
         blue_tank.x = blue_tank.x + 5
         blue_tank.angle = RIGHT
@@ -141,6 +138,20 @@ def move_zombie():
                 score += 1
             if zomb.colliderect(blue_tank):
                 game_over = True
+                
+            
 
 
+
+
+
+
+
+num = random.random()
+num2 = random.random()
+if num == num2:
+    print (" Counting Score...")
+    
+
+print ("Counted Score")
 pgzrun.go()
