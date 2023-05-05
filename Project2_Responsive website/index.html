@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>TRAVEL-NOW</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
+    <script src="scripts/home.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One|Merriweather|Open+Sans" rel="stylesheet">
+    <link href="styles/global.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-mauve">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">TRAVEL-NOW</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul id="topMenu" class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="deals.html">Deals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="spacer v80"></div>
+    <div class="container">
+        <div class="featureImage roundCorners homeIndex">
+            <div class="text">
+                <h1>
+                    TRAVEL-NOW
+                </h1>
+            </div>
+        </div>
+        <div class="primaryMessage">
+            <p>
+                We all dream of a great holiday.
+                <br />
+                Contact us to make your dream come true!
+            </p>
+        </div>
+        <div class="quote roundCorners">
+            <div class="quoteItem">
+                <p>
+                    The journey not the arrival matters.
+                </p>
+                <span>T.S. Elliot</span>
+            </div>
+            <div class="quoteItem" style="display:none;">
+                <p>
+                    Jobs fill your pocket, but adventures fill your soul.
+                </p>
+                <span>Jamie Lyn Beatty</span>
+            </div>
+        </div>
+        <div class="spacer v40"></div>
+        <div class="popularDestinations">
+            <div class="heading">
+                POPULAR DESTINATIONS
+            </div>
+            <div class="row">
+                <div class="col-md-4 destinationItem">
+                    <a href="deals.html" class="subHeading">
+                        <img src="images/p_01277905.jpg" class="image" /><br />Rome
+                    </a>
+                </div>
+                <div class="col-md-4 destinationItem">
+                    <a href="deals.html" class="subHeading">
+                        <img src="images/p_01283180.jpg" class="image" /><br />Egypt
+                    </a>
+                </div>
+                <div class="col-md-4 destinationItem">
+                    <a href="deals.html" class="subHeading">
+                        <img src="images/p_01278002.jpg" class="image" /><br />Africa
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="spacer v60"></div>
+        <div class="featuredDeals">
+            <h2 class="heading">LAST MINUTE DEALS</h2>
+            <div id="dealsCarousel" class="carousel slide " data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#dealsCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#dealsCarousel" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <a href="deals.html">
+                            <img class="d-block w-100 roundCorners" src="images/p_01264368.jpg" alt="Serengeti Safari Park">
+                            <div class="carousel-caption d-block">
+                                <h3>SERENGETI SAFARI</h3>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="deals.html">
+                            <img class="d-block w-100 roundCorners" src="images/p_01265224.jpg" alt="Great Wall of China">
+                            <div class="carousel-caption d-block">
+                                <h3>GREAT WALL OF CHINA</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#dealsCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#dealsCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div class="link">
+                <a href="deals.html">VIEW ALL LAST MINUTE DEALS</a>
+            </div>
+        </div>
+        <div class="spacer v60"></div>
+    </div>
+    <div id="copyright">
+        <div>&copy; 2020 <a href="index.html" class="logo">TRAVEL-NOW</a></div>
+    </div>
+</body>
+</html>

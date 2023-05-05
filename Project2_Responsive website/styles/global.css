@@ -1,0 +1,307 @@
+﻿/*
+    font-family: 'Merriweather', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Merienda One', cursive;
+    Text color : #333;
+    Dark blue : #345995;
+    Light blue : #4392F1;
+    Red :  #D7263D;
+    Yellow : #EAC435;
+    Mauve : #BC8796;
+    Silver : #C0C0C0;
+    Light gray : #D3D3D3;
+*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #333;
+    background-color: white;
+}
+.spacer.v80 {
+    height: 80px;
+}
+.spacer.v60 {
+    height: 60px;
+}
+.spacer.v40 {
+    height: 40px;
+}
+.spacer.v20 {
+    height: 20px;
+}
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+}
+h1 {
+    font-size: 60px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 20px;
+}
+.roundCorners {
+    border-radius: 15px;
+}
+    .roundCorners.top {
+        border-radius: 15px 15px 0 0;
+    }
+    .roundCorners.bottom {
+        border-radius: 0 0 15px 15px;
+    }
+.bg-mauve {
+    background-color: #BC8796;
+}
+.logo {
+    font-family: 'Merriweather', serif;
+    font-weight: bold;
+}
+.navbar-brand.logo {
+    color: white;
+}
+    .navbar-brand.logo:hover {
+        color: white;
+    }
+.featureImage {
+    width: 100%;
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}
+    .featureImage.homeIndex {
+        background-image: url(../images/p_01265911.jpg);
+    }
+    .featureImage .text {
+        margin: 0;
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        color: #fff;
+        text-align: center;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+    }
+@media screen and (max-width: 400px) {
+    .featureImage .text h1 {
+        font-size: 22px;
+    }
+}
+@media screen and (min-width: 401px) and (max-width: 767px) {
+    .featureImage .text h1 {
+        font-size: 32px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .featureImage .text h1 {
+        font-size: 80px;
+    }
+}
+.primaryMessage {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 0;
+    max-width: 80%;
+}
+@media screen and (max-width: 575px) {
+    .primaryMessage {
+        font-size: 18px;
+    }
+}
+@media screen and (min-width: 576px) {
+    .primaryMessage {
+        font-size: 23px;
+    }
+}
+.quote {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #4392F1;
+    color: white;
+    height: 180px;
+    position: relative;
+}
+@media screen and (min-width: 767px) {
+    .quote {
+        height: 220px;
+    }
+}
+.quote > quoteItem {
+    max-width: 60%;
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.quoteItem p {
+    font-family: 'Merienda One', cursive;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+    .quoteItem p:before {
+        color: #EAC435;
+        content: open-quote;
+        font-size: 40px;
+        line-height: 20px;
+        margin-right: 5px;
+        vertical-align: -13px;
+    }
+    .quoteItem p:after {
+        color: #EAC435;
+        content: close-quote;
+        font-size: 40px;
+        line-height: 20px;
+        margin-left: 5px;
+        vertical-align: -13px;
+    }
+@media screen and (max-width: 766px) {
+    .quoteItem p {
+        font-size: 14px;
+    }
+        .quoteItem p:before {
+            vertical-align: -12px;
+        }
+        .quoteItem p:after {
+            vertical-align: -17px;
+        }
+}
+.quoteItem span {
+    color: #EAC435;
+    font-size: 18px;
+}
+.popularDestinations .row .destinationItem {
+    text-align: center;
+}
+@media screen and (max-width: 575px) {
+    .popularDestinations .row .destinationItem {
+        margin-bottom: 20px;
+    }
+}
+.popularDestinations .heading,
+.popularDestinations .subHeading {
+    font-family: 'Merriweather', serif;
+}
+.popularDestinations .heading {
+    font-size: 30px;
+    line-height: 35px;
+}
+.popularDestinations .subHeading {
+    font-size: 36px;
+    color: #345995;
+}
+    .popularDestinations .subHeading:hover {
+        text-decoration: none;
+        color: #D7263D;
+    }
+.popularDestinations .image {
+    width: 100%;
+}
+@media screen and (max-width: 575px) {
+    .carousel-caption h3 {
+        font-size: 24px;
+    }
+}
+@media screen and (min-width: 576px) {
+    .carousel-caption h3 {
+        font-size: 40px;
+    }
+}
+.carousel-caption {
+    margin: 0;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    color: #fff;
+    text-align: center;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+}
+.featuredDeals .link {
+    text-align: right;
+}
+.featuredDeals a {
+    color: #333;
+}
+    .featuredDeals a:hover {
+        text-decoration: none;
+        color: #D7263D;
+    }
+#copyright {
+    text-align: center;
+    background-color: #345995;
+    color: white;
+    height: 58px;
+    padding-top: 18px;
+    font-size: 16px;
+}
+    #copyright a {
+        color: white;
+        cursor: pointer;
+    }
+        #copyright a:hover {
+            color: #D7263D;
+            text-decoration: none;
+        }
+.featureImage.deals {
+    background-image: url(../images/p_01265699.jpg);
+}
+.lastMinuteDeals .row {
+    padding-bottom: 15px;
+    margin: 0;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #888;
+}
+    .lastMinuteDeals .row.last {
+        border-width: 1px 0 1px 0;
+    }
+    .lastMinuteDeals .row:hover {
+        background-color: #BC8796;
+        color: white;
+    }
+@media screen and (min-width: 1px) and (max-width: 575px) {
+    .lastMinuteDeals .row {
+        padding: 0px 15px 20px 15px;
+    }
+}
+.lastMinuteDeals .link {
+    text-align: right;
+}
+.lastMinuteDeals a {
+    color: #333;
+}
+    .lastMinuteDeals a:hover {
+        text-decoration: none;
+        color: #333;
+    }
+.lastMinuteDeals .deal:nth-child(odd) {
+    background-color: #C0C0C0;
+}
+.lastMinuteDeals .deal:nth-child(even) {
+    background-color: #D3D3D3;
+}
+.lastMinuteDeals .col-sm {
+    padding: 15px 0px 0px 15px;
+    margin: 0;
+}
+@media screen and (min-width: 1px) and (max-width:575px) {
+    .lastMinuteDeals .col-sm {
+        padding: 15px 15px 0px 15px;
+    }
+}
+.lastMinuteDeals .name {
+    font-weight: bold;
+}

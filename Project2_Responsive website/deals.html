@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>LAST MINUTE DEALS</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="scripts/app.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Merienda+One|Merriweather|Open+Sans" rel="stylesheet">
+    <link href="styles/global.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-mauve">
+        <div class="container">
+            <a class="navbar-brand logo" href="index.html">TRAVEL-NOW</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul id="topMenu" class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="deals.html">Deals <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="spacer v60"></div>
+    <div class="container">
+        <div class="featureImage roundCorners deals">
+            <div class="text">
+                <h1>
+                    LAST MINUTE DEALS
+                </h1>
+            </div>
+        </div>
+        <div class="spacer v60"></div>
+        <div class="pageContent">
+            <h2>LAST MINUTE DEALS</h2>
+            <hr>
+            <div class="spacer v20"></div>
+            <div class="lastMinuteDeals">
+                <div class="deal">
+                    <a href="deals.html">
+                        <div class="row  ">
+                            <div class="col-sm name">
+                                Great Wall of China
+                            </div>
+                            <div class="col-sm depart">
+                                21 July 2019
+                            </div>
+                            <div class="col-sm length">
+                                10 days
+                            </div>
+                            <div class="col-sm price">
+                                $1000
+                            </div>
+                            <div class="col-sm buy">
+                                <form method="post" target="_blank" action="https://www.paypal.com/cgi-bin/webscr">
+                                    <input type="hidden" value="_cart" name="cmd" />
+                                    <input type="hidden" value="yourpaypalemailaddress@example.com" name="business" />
+                                    <input type="hidden" name="upload" value="1" />
+                                    <input type="hidden" name="charset" value="US-ASCII" />
+                                    <input type="hidden" value="1" name="quantity_1" />
+                                    <input type="hidden" value="Great Wall of China" name="item_name_1" />
+                                    <input type="hidden" value="1000" name="amount_1" />
+                                    <input type="hidden" value="0" name="shipping_1" />
+                                    <input type="hidden" value="USD" name="currency_code" />
+                                    <input type="hidden" value="PP-BuyNowBF" name="bn" />
+                                    <input type="submit" value="Buy Now" class="roundCorners" />
+                                </form>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="deal">
+                    <a href="deals.html">
+                        <div class="row  ">
+                            <div class="col-sm name">
+                                Serengeti Safari
+                            </div>
+                            <div class="col-sm depart">
+                                27 July 2019
+                            </div>
+                            <div class="col-sm length">
+                                7 days
+                            </div>
+
+                            <div class="col-sm price">
+                                $800
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="spacer v60"></div>
+        </div>
+    </div>
+    <div class="spacer v60"></div>
+    <div id="copyright">
+        <div>&copy; 2020 <a href="index.html" class="logo">TRAVEL-NOW</a></div>
+    </div>
+</body>
+</html>
