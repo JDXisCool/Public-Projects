@@ -4,7 +4,7 @@ import random
 the_number = random.randint(1, 4)
 guess = 0
 
-print(the_number)
+
 while guess != the_number:
     guess = int(input("Please enter a number: "))
     if guess > the_number:
