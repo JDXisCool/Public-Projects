@@ -50,7 +50,6 @@ class Voxel(Button):
 			if key == 'right mouse down':
 				punch_sound.play()
 				destroy(self)
-
 class Sky(Entity):
 	def __init__(self):
 		super().__init__(
