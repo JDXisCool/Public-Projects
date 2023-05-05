@@ -1,11 +1,11 @@
 import random
-print (" You have to guess from the number 1 to 100! Good Luck!")
+print (" You have to guess from the number 1 to 10! Good Luck!")
 
 the_number = random.randint(1, 4)
 guess = 0
 
 minPossible = 0
-maxPossible = 100
+maxPossible = 10
 
 while guess != the_number:
     guess = int(input("Please enter a number: "))
