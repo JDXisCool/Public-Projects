@@ -5,7 +5,7 @@ players = ["Martin", "Craig", "Sue",
            "Rose", "Lexi", "Maria",
            "Thomas", "James", "William",
            "Ada", "Grace", "Jean",
-           "Marissa", "Alan"]
+           "Marissa", "Muny"]
 print("Welcome to Team Allocator!")
 while True:
     random.shuffle(players)
