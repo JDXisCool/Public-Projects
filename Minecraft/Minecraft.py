@@ -18,7 +18,7 @@ window.exit_button.visible = False #To Remove the exit(close) Button
 def update():
 	global block_pick
 
-	if held_keys['left mouse'] or held_keys['right mouse']:
+	if held_keys['right mouse'] or held_keys['left mouse']:
 		hand.active()
 	else:
 		hand.passive()
