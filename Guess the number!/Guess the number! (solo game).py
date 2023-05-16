@@ -5,7 +5,7 @@ input ("What is the number that you choose?")
 if input == num:
     print (" You are A good guesser!")
 
-if input != num:
+else:
     print ("The Number that you guessed is wrong. Better luck next time!")    
 
 print ("Thanks for playing!") 
