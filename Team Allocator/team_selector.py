@@ -1,11 +1,5 @@
 import random
-players = ["Martin", "Craig", "Sue",
-           "Claire", "Dave", "Alice",
-           "Sonakshi", "Harry", "Jack",
-           "Rose", "Lexi", "Maria",
-           "Thomas", "James", "William",
-           "Ada", "Grace", "Jean",
-           "Marissa", "Muny"]
+players = ["Ayyan", "Aditya","Ansh", "Shriram"]
 print("Welcome to Team Allocator!")
 while True:
     random.shuffle(players)
