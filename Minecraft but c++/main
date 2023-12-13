@@ -1,0 +1,123 @@
+//---------------------------------------------------------------------------
+#include <fmx.h>
+#pragma hdrstop
+ 
+#include "MineCraft_Unit1.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#pragma resource "*.fmx"
+TForm1 *Form1;
+//---------------------------------------------------------------------------
+# define MAPWIDTH 32
+# define MAPHEIGHT 4
+# define MAPDEPTH 32
+ 
+struct st_space
+{
+ TCube *cube;
+};
+struct st_space space[MAPWIDTH][MAPHEIGHT][MAPDEPTH];
+ 
+float step = 0.5, gridwidth = 0.5, griddepth = 0.5, gridheight=0.5;
+ 
+//---------------------------------------------------------------------------
+void create_cube(int x, int y, int z)
+{
+ TCube *cube =new TCube(Form1->Viewport3D1);
+ 
+ if(cube!=NULL)
+ {
+ cube->BeginUpdate();
+ cube->Parent = Form1->Viewport3D1;
+ cube->Width  = gridwidth;
+ cube->Height = gridheight;
+ cube->Depth  = griddepth;
+ cube->Opacity = 1.0;
+ cube->Position->X = gridwidth/2+x*gridwidth-MAPWIDTH*gridwidth/2;
+ cube->Position->Y = -1*(gridheight/2+y*gridheight);
+ cube->Position->Z = griddepth/2+z*griddepth-MAPDEPTH*griddepth/2;
+ cube->MaterialSource = Form1->LightMaterialSource2;
+ cube->HitTest = false;
+ cube->EndUpdate();
+         cube->Repaint();
+ space[x][y][z].cube = cube;
+ }
+}
+//---------------------------------------------------------------------------
+void free_mapspace()
+{
+ for(int k=0; k<MAPDEPTH; k++)
+ for(int j=0; j<MAPHEIGHT; j++)
+ for(int i=0; i<MAPWIDTH; i++)
+ {
+ if(space[i][j][k].cube!=NULL) space[i][j][k].cube->Free();
+ }
+ 
+}
+//---------------------------------------------------------------------------
+__fastcall TForm1::TForm1(TComponent* Owner) : TForm(Owner)
+{
+ Ground1->Width  = MAPWIDTH*gridwidth;
+ Ground1->Depth  = MAPDEPTH*griddepth;
+ Ground1->Height = 0.01;
+ 
+ create_cube(0,0,0);
+ create_cube(1,0,0);
+ create_cube(0,0,1);
+ Sphere1->Position->X=0;
+ Sphere1->Position->Y=0;
+ Sphere1->Position->Z=0;
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormClose(TObject *Sender, TCloseAction &Action)
+{
+   free_mapspace();
+}
+//---------------------------------------------------------------------------
+void __fastcall TForm1::FormKeyDown(TObject *Sender, WORD &Key, System::WideChar &KeyChar, TShiftState Shift)
+{
+ 
+ switch (KeyChar)
+ {
+ case 'a': // Rotate Left
+ Dummy1->RotationAngle->Y-=5;
+ break;
+ 
+ case 'd': // Rotate Right
+ Dummy1->RotationAngle->Y+=5;
+ break;
+ 
+ case 'w': // Move Forward
+ Viewport3D1->BeginUpdate();
+ Dummy1->Position->X += step*Sin(Dummy1->RotationAngle->Y/180*M_PI);
+ Dummy1->Position->Z += step*Cos(Dummy1->RotationAngle->Y/180*M_PI);
+ Viewport3D1->EndUpdate();
+ break;
+ 
+ case 's': // Move Backward
+ Viewport3D1->BeginUpdate();
+ Dummy1->Position->X -= step*Sin(Dummy1->RotationAngle->Y/180*M_PI);
+ Dummy1->Position->Z -= step*Cos(Dummy1->RotationAngle->Y/180*M_PI);
+ Viewport3D1->EndUpdate();
+ break;
+ 
+ case ' ':
+ float frontx = Dummy1->Position->X+step*Sin(Dummy1->RotationAngle->Y/180.0*M_PI);
+ float frontz = Dummy1->Position->Z+step*Cos(Dummy1->RotationAngle->Y/180.0*M_PI);
+ 
+ int X = floor(MAPWIDTH/2 + frontx/gridwidth);
+ int Y = floor(-1*Dummy1->Position->Y/gridheight-gridheight/2);
+ int Z = floor(MAPDEPTH/2 + frontz/griddepth);
+ 
+ 
+ 
+ Label1->Text=":"+IntToStr(X)+","+IntToStr(Z)+","+IntToStr(Y); //+ "  at  "+IntToStr(CX)+","+IntToStr(CZ)+","+IntToStr(CY);
+ if (X>=0 && Z>=0 && Y>=0 && X<MAPWIDTH && Z<MAPDEPTH && Y<MAPHEIGHT)
+ {
+ Label1->Text="Build To:"+IntToStr(X)+","+IntToStr(Z)+","+IntToStr(Y);//+ "  at  "+IntToStr(CX)+","+IntToStr(CZ)+","+IntToStr(CY);
+ if(space[X][Y][Z].cube==NULL) create_cube(X, Y, Z);
+ else { space[X][Y][Z].cube->Free(); space[X][Y][Z].cube=NULL; }
+ }
+ break;
+ }
+}

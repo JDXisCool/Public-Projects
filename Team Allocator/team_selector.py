@@ -1,5 +1,5 @@
 import random
-import webbrowser
+from webbrowser import open as show_me
 players = ["Ayyan", "Aditya","Ansh", "Shriram"]
 print("Welcome to Team/Player Allocator!")
 
