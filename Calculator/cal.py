@@ -1,4 +1,5 @@
 import random
+
 while True:
     Operation = input("Select one : + , - X , Divison : ")
     if Operation == "+":
@@ -6,19 +7,19 @@ while True:
         number2 = float(input (" What is Number Two? Please type here :"))
         Answer = number1 + number2
         print ("Your answer is " + str(Answer))
-
+        
     elif Operation == "-":
         number1 = float(input (" What is Number One? Please type here :"))
         number2 = float(input (" What is Number Two? Please type here :"))
         Answer = number1 - number2
         print ("Your answer is " + str(Answer))
-
-    elif Operation == "*":
+        
+    elif Operation == "X":
         number1 = float(input (" What is Number One? Please type here :"))
         number2 = float(input (" What is Number Two? Please type here :"))
         Answer = number1 * number2
         print ("Your answer is " + str(Answer))
-
+        
     elif Operation == "/": 
         number1 = float(input (" What is Number One? Please type here :"))
         number2 = float(input (" What is Number Two? Please type here :"))
