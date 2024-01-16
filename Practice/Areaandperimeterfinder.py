@@ -1,0 +1,6 @@
+length = float(input("Please enter the length of a rectangle in cms: "))
+breadth = float(input("Please enter the breadth of a rectangle in cms: "))
+perimeter = (length * 2) + (breadth * 2)
+area = (perimeter) * (breadth)
+print("Your perimeter is " + str(perimeter) + " cms")
+print("Your area is " + str(area) + " cms")

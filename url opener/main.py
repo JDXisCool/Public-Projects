@@ -1,8 +1,8 @@
-from webbrowser import open as show_me
+from webbrowser import open as munygopeehe
 
 while True:
     url = input("Enter an URL: ")
-    show_me(url)
+    munygopeehe(url)
 
     response = input("Do you want to Repeat your request? Type y or n: ")
     if response.lower() == "n":
