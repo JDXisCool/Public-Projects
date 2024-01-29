@@ -1,0 +1,16 @@
+# Accept marks from the user
+English = float(input("Enter your marks in English: "))
+Math = float(input("Enter your marks in Math: "))
+Science = float(input("Enter your marks in Science: "))
+
+# Calculate the average
+average = (English + Math + Science) / 3
+
+# Display the average
+print("The average is :", average)
+
+# Check if the user has passed
+if average >= 50:
+    print("Pass")
+else:
+    print("Work hard")
