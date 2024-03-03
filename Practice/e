@@ -3,4 +3,4 @@ while True:
     print ("This is ",bandit(1, 6) )
     ans = input(" restart? y/n ")
     if ans == "n":
-        break
+        break       
