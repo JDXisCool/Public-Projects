@@ -84,7 +84,7 @@ def draw_game_over():
     screen.draw.text("GAME OVER", midbottom=screen_middle, fontsize=GRID_SIZE, color="cyan", owidth=1)
 #Checking if the player won
     if player_won and not page_opened:
-        url = "file:///C:/Users/Poonam%20Sharma/OneDrive/Desktop/New%20folder/Python-code/Team%20Allocator/thankyou.html"
+        url = "file:///C:/Users/Poonam%20Sharma/OneDrive/Desktop/New%20folder/Python-code/Knight's%20Quest/HTML_Thankyuou/thankyou.html"
         munygopeehe(url)
         page_opened = True
 
