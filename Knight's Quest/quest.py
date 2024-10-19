@@ -1,6 +1,9 @@
+#Adding the modules
 import pgzrun
 import random 
 from webbrowser import open as munygopeehe
+#setting base variables
+page_opened = False
 GRID_WIDTH = 17
 GRID_HEIGHT = 12
 GRID_SIZE = 50
@@ -9,6 +12,7 @@ PLAYER_MOVE_INTERVAL = 0.25
 BACKGROUND_SEED =  random.randint(1, 999999999999999)
 WIDTH = GRID_WIDTH * GRID_SIZE
 HEIGHT = GRID_HEIGHT * GRID_SIZE
+#Map Layout
 MAP = ["WWWWWWWWWWWWWWWWW",
        "W               W",
        "W               W",
@@ -21,6 +25,7 @@ MAP = ["WWWWWWWWWWWWWWWWW",
        "W               W",
        "W               D",
        "WWWWWWWWWWWWWWWWW"]
+#Definitions of the functuions
 def screen_coords(x, y):
     return (x * GRID_SIZE, y * GRID_SIZE)
 def grid_coords(actor):
@@ -73,28 +78,28 @@ def draw_actors():
     for guard in guards:
         guard.draw()
 def draw_game_over():
+    global page_opened
+
     screen_middle = (WIDTH / 2, HEIGHT / 2)
-    screen.draw.text("GAME OVER", midbottom=screen_middle, \
-                    fontsize=GRID_SIZE, color="cyan", owidth=1)
-    if player_won:
+    screen.draw.text("GAME OVER", midbottom=screen_middle, fontsize=GRID_SIZE, color="cyan", owidth=1)
+#Checking if the player won
+    if player_won and not page_opened:
         url = "file:///C:/Users/Poonam%20Sharma/OneDrive/Desktop/New%20folder/Python-code/Team%20Allocator/thankyou.html"
         munygopeehe(url)
+        page_opened = True
+
+    if player_won:
         screen.draw.text("You won!", midtop=screen_middle, fontsize=GRID_SIZE, color="green", owidth=1)
-        
-                    
-                    
     else:
-        screen.draw.text("You lost!", midtop=screen_middle, \
-                        fontsize=GRID_SIZE, color="red", owidth=1)
-        screen.draw.text("Press SPACE to play again", midtop=(WIDTH / 2, \
-                        HEIGHT / 2 + GRID_SIZE), fontsize=GRID_SIZE / 2, \
-                        color="cyan", owidth=1)
+        screen.draw.text("You lost!", midtop=screen_middle, fontsize=GRID_SIZE, color="red", owidth=1)
+    screen.draw.text("Press SPACE to play again", midtop=(WIDTH / 2, HEIGHT / 2 + GRID_SIZE), fontsize=GRID_SIZE / 2, color="cyan", owidth=1)
 def draw():
     draw_background()
     draw_scenery()
     draw_actors()
     if game_over:
         draw_game_over()
+#Keybinds
 def on_key_up(key):
     if key == keys.SPACE and game_over:
         setup_game()
@@ -130,6 +135,7 @@ def move_player(dx, dy):
             break
     animate(player, pos=screen_coords(x, y), \
             duration=PLAYER_MOVE_INTERVAL)
+#guard moving
 def move_guard(guard):
     global game_over
     if game_over:
@@ -151,6 +157,7 @@ def move_guard(guard):
 def move_guards():
     for guard in guards:
         move_guard(guard)
+#final setup and ready for launch 🚀
 setup_game()
 clock.schedule_interval(move_guards, GUARD_MOVE_INTERVAL)
 pgzrun.go()
