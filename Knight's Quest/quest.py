@@ -1,25 +1,26 @@
 import pgzrun
-import random
-GRID_WIDTH = 16
+import random 
+from webbrowser import open as munygopeehe
+GRID_WIDTH = 17
 GRID_HEIGHT = 12
 GRID_SIZE = 50
 GUARD_MOVE_INTERVAL = 0.5
-PLAYER_MOVE_INTERVAL = 0.1
-BACKGROUND_SEED = 123456
+PLAYER_MOVE_INTERVAL = 0.25
+BACKGROUND_SEED =  random.randint(1, 999999999999999)
 WIDTH = GRID_WIDTH * GRID_SIZE
 HEIGHT = GRID_HEIGHT * GRID_SIZE
-MAP = ["WWWWWWWWWWWWWWWW",
-       "W              W",
-       "W              W",
-       "W  W  KG       W",
-       "W  WWWWWWWWWW  W",
-       "W              W",
-       "W      P       W",
-       "W  WWWWWWWWWW  W",
-       "W      GK   W  W",
-       "W              W",
-       "W              D",
-       "WWWWWWWWWWWWWWWW"]
+MAP = ["WWWWWWWWWWWWWWWWW",
+       "W               W",
+       "W               W",
+       "W  W  KG        W",
+       "W  WWWWWWWWWW   W",
+       "W               W",
+       "W      P        W",
+       "W  WWWWWWWWWW   W",
+       "W      GK   W   W",
+       "W               W",
+       "W               D",
+       "WWWWWWWWWWWWWWWWW"]
 def screen_coords(x, y):
     return (x * GRID_SIZE, y * GRID_SIZE)
 def grid_coords(actor):
@@ -74,16 +75,20 @@ def draw_actors():
 def draw_game_over():
     screen_middle = (WIDTH / 2, HEIGHT / 2)
     screen.draw.text("GAME OVER", midbottom=screen_middle, \
-                     fontsize=GRID_SIZE, color="cyan", owidth=1)
+                    fontsize=GRID_SIZE, color="cyan", owidth=1)
     if player_won:
-        screen.draw.text("You won!", midtop=screen_middle, \
-                         fontsize=GRID_SIZE, color="green", owidth=1)
+        url = "file:///C:/Users/Poonam%20Sharma/OneDrive/Desktop/New%20folder/Python-code/Team%20Allocator/thankyou.html"
+        munygopeehe(url)
+        screen.draw.text("You won!", midtop=screen_middle, fontsize=GRID_SIZE, color="green", owidth=1)
+        
+                    
+                    
     else:
         screen.draw.text("You lost!", midtop=screen_middle, \
-                         fontsize=GRID_SIZE, color="red", owidth=1)
+                        fontsize=GRID_SIZE, color="red", owidth=1)
         screen.draw.text("Press SPACE to play again", midtop=(WIDTH / 2, \
-                         HEIGHT / 2 + GRID_SIZE), fontsize=GRID_SIZE / 2, \
-                         color="cyan", owidth=1)
+                        HEIGHT / 2 + GRID_SIZE), fontsize=GRID_SIZE / 2, \
+                        color="cyan", owidth=1)
 def draw():
     draw_background()
     draw_scenery()
